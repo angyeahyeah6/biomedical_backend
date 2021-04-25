@@ -21,20 +21,6 @@ public class ToraManager {
     private static Logger logger = Logger.getLogger("LearningModel");
     public static void main(String[] args) {
         String drug = "Keratin-19";
-//        String drug = getEval.drugName;
-        ToraManager manager = new ToraManager();
-        Integer cnt = 0;
-        List<IndexScore> diseaseRank = manager.predictRank(drug);
-        LinkedHashMap<String, Map<String, Object>> evaluationScore = new LinkedHashMap<>();
-        for(IndexScore score : diseaseRank){
-            Map<String, Object> tmp = new HashMap<>();
-            tmp.put("feature1", score.getFeature());
-            tmp.put("feature2", score.getFeature2());
-            tmp.put("id", cnt.toString());
-            cnt += 1;
-            evaluationScore.put(score.getName(),tmp);
-        }
-//        return evaluationScore;
 
     }
     // intermidiates : target : predicate num

@@ -19,7 +19,7 @@ public class ToraController {
     public Map getPredictRank(@RequestBody InPredicate getPredicate) {
         String drug = getPredicate.drugName;
         ToraManager manager = new ToraManager();
-        Integer displayCount = 1;
+        Integer displayCount = 10;
         // c ranking
         List<IndexScore> diseaseRank = manager.predictRank(drug);
 
