@@ -119,7 +119,9 @@ public class ToraManager {
         Map<String, Map<String, Map<String, Double>>> intermediacteCnt = new HashMap<>();
         for(PredicateInterm interm : intermediates){
             Map<String, Map<String, Double>> temp = new HashMap<>();
-            temp.put(interm.getTargetNodeName(), interm.predicateCountMap);
+            temp.put(interm.getTargetNodeName(),
+                    interm.predicateCountMap.entrySet().stream().filter(x -> x.getValue() != 0 )
+                            .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue())));
             intermediacteCnt.put(interm.getIntermNodeName(), temp);
         }
         return intermediacteCnt;
