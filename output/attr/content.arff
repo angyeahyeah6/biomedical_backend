@@ -1,0 +1,384 @@
+@relation 'contentAttr-weka.filters.unsupervised.attribute.StringToWordVector-R1-W1000-prune-rate-1.0-C-N0-stemmerweka.core.stemmers.NullStemmer-stopwords-handlerweka.core.stopwords.Null-M1-tokenizerweka.core.tokenizers.WordTokenizer -delimiters \" \\r\\n\\t.,;:\\\'\\\"()?!\"'
+
+@attribute label {important,unimportant}
+@attribute AFFECTS numeric
+@attribute ASSOCIATED_WITH numeric
+@attribute AUGMENTS numeric
+@attribute CAUSES numeric
+@attribute COEXISTS_WITH numeric
+@attribute DISRUPTS numeric
+@attribute INHIBITS numeric
+@attribute INTERACTS_WITH numeric
+@attribute ISA numeric
+@attribute LOCATION_OF numeric
+@attribute PART_OF numeric
+@attribute PREDISPOSES numeric
+@attribute PREVENTS numeric
+@attribute PRODUCES numeric
+@attribute STIMULATES numeric
+@attribute TREATS numeric
+@attribute USES numeric
+@attribute compared_with numeric
+@attribute PROCESS_OF numeric
+
+@data
+{1 1,2 53,3 1,4 1,6 1,7 1,8 3,14 3,16 76}
+{1 2,4 1,5 1,7 3}
+{2 1,7 2,15 1}
+{2 1,5 3,7 2,8 1,16 1}
+{5 8,7 84,8 31,15 7,16 1,17 1,18 2}
+{1 3,2 5,16 2,18 1}
+{1 2,2 2}
+{2 4,5 5,7 16,8 11,15 3,16 2}
+{1 1,3 2,4 5,5 25,12 8,16 3}
+{4 1,5 1,7 1,8 4}
+{2 6,7 1,8 1}
+{16 1,18 1}
+{5 2,16 1}
+{2 5,15 1}
+{2 1,7 1,8 1,16 1}
+{2 5,3 1,5 1}
+{0 unimportant,5 1,7 4,8 2,15 3,16 1,18 2}
+{0 unimportant,2 1,5 1,7 6,8 2,16 2}
+{0 unimportant,1 1,5 1,16 3}
+{0 unimportant,1 1,2 2,3 8,15 2}
+{0 unimportant,1 1,2 1,3 1,6 1}
+{0 unimportant,2 1,8 1}
+{0 unimportant,2 1,5 1}
+{0 unimportant,15 1,16 2}
+{0 unimportant,1 1,8 1,9 84,18 4}
+{0 unimportant,2 2,4 2,15 1}
+{0 unimportant,4 2,5 1,7 1,16 1}
+{0 unimportant,8 1,16 1,18 1}
+{0 unimportant,1 1,10 6}
+{0 unimportant}
+{0 unimportant,2 14,3 1,5 1}
+{0 unimportant,4 1,5 1,16 4}
+{0 unimportant,8 1,16 1}
+{0 unimportant,5 1,16 3}
+{0 unimportant,1 3,3 2,4 4,5 8,9 34,12 3,16 9}
+{0 unimportant,2 1,7 1,8 5}
+{0 unimportant,7 8,8 3,15 2,16 1,17 1,18 1}
+{0 unimportant,10 6}
+{0 unimportant,2 2,8 1,16 1}
+{0 unimportant,5 1,16 1}
+{0 unimportant,4 5,5 1,12 2,16 1}
+{0 unimportant,2 2,8 3}
+{0 unimportant,16 5,17 3,18 33}
+{0 unimportant,1 1,5 1,12 1,16 1}
+{0 unimportant,2 1,7 2}
+{0 unimportant,5 4,12 2,16 1}
+{0 unimportant,3 1,10 2}
+{0 unimportant,4 2,12 1,16 3}
+{0 unimportant,2 2,8 1}
+{0 unimportant,4 1,10 28}
+{0 unimportant,16 4}
+{0 unimportant,2 1}
+{0 unimportant,1 5,2 1,3 1,6 9}
+{0 unimportant,2 1,18 1}
+{0 unimportant,16 1,19 1}
+{0 unimportant,8 4,15 1,16 1}
+{0 unimportant,5 1,7 2,15 2,16 4,17 4}
+{0 unimportant,1 1,2 1,15 1,16 3}
+{0 unimportant,3 2,4 1,5 1,13 1,16 8}
+{0 unimportant,10 3}
+{0 unimportant,5 1,16 1,17 1}
+{0 unimportant,1 7,2 80,3 3,4 2,6 5,7 1,8 1,13 2,14 13,16 65,18 1}
+{0 unimportant,2 1,5 1,7 1,8 1}
+{0 unimportant,5 1,8 6,16 1}
+{0 unimportant,5 4,7 2,8 11,9 36,15 7,16 27,18 4}
+{0 unimportant,8 1,15 1,16 1}
+{0 unimportant,10 4}
+{0 unimportant,1 6,3 2,6 2,10 11}
+{0 unimportant,2 4,7 2,13 1}
+{0 unimportant,9 1,16 2}
+{0 unimportant,2 3,16 2,18 1}
+{0 unimportant,2 1,8 2}
+{0 unimportant,2 4,7 1,8 2,15 1}
+{0 unimportant,6 1,7 4,8 1,15 1}
+{0 unimportant,2 3,7 1,15 1}
+{0 unimportant,2 1}
+{0 unimportant,1 1,10 1}
+{0 unimportant,15 1,16 1}
+{0 unimportant,16 1}
+{0 unimportant,2 1,8 2}
+{0 unimportant,4 2,8 1}
+{0 unimportant,5 1,15 1,16 5}
+{0 unimportant,7 1,16 1}
+{0 unimportant,1 4,4 1,5 26,6 1,16 9}
+{0 unimportant,16 1,17 1}
+{0 unimportant,5 1,13 1}
+{0 unimportant,2 8,4 1,8 1,16 7}
+{1 1,2 1,7 12,8 2,11 1}
+{9 17,16 1}
+{16 1,18 1}
+{7 1,9 3,16 3,18 1}
+{0 unimportant,1 1,5 1}
+{0 unimportant,9 3,16 2}
+{0 unimportant,1 1,5 22,9 11,12 1,13 1}
+{0 unimportant,16 1,18 6}
+{2 1,7 1,8 2}
+{0 unimportant,1 2,2 22,3 2,7 3,12 2}
+{0 unimportant,5 13,16 6}
+{0 unimportant,2 1,8 1}
+{0 unimportant,1 9,2 86,3 5,8 2,16 3}
+{0 unimportant,1 1,4 2,5 49,12 2,16 1}
+{0 unimportant,16 19,18 1}
+{0 unimportant,1 1,2 15,3 1,4 3,12 2,16 1}
+{0 unimportant,1 1,2 18,3 1,6 1,8 1,12 15,16 2}
+{0 unimportant,9 5,16 5}
+{0 unimportant,2 29,3 1,5 2,6 1,7 4,12 1,13 1,16 1}
+{0 unimportant,1 7,3 1,4 5,5 86,12 10,16 1}
+{0 unimportant,5 1,8 1,13 2,16 21}
+{0 unimportant,7 1,8 1,16 8}
+{0 unimportant,1 2,7 1,8 1,13 1,16 21,18 1}
+{0 unimportant,13 3,16 47,17 1,18 4}
+{0 unimportant,2 4,8 1,16 7}
+{0 unimportant,2 10,8 1,12 1}
+{0 unimportant,2 8}
+{1 2,2 3,5 1,8 1,16 4}
+{2 1,4 1,5 3,7 4}
+{1 1,2 3,3 1,7 2,8 1,14 1,16 1}
+{8 7,9 30,13 1,16 1}
+{9 2,13 1,16 4,18 1}
+{2 1,7 1}
+{0 unimportant,2 1,9 2}
+{0 unimportant,1 2,4 4,5 2,9 5}
+{0 unimportant,16 4,18 1}
+{0 unimportant,1 2,2 1,6 1}
+{0 unimportant,9 1,13 1}
+{0 unimportant,1 1,9 6}
+{0 unimportant,1 1,4 1}
+{0 unimportant,1 1,5 1}
+{0 unimportant,1 3,3 1,4 6,9 1,16 2,18 1}
+{0 unimportant,2 1,18 1}
+{0 unimportant,14 1}
+{2 16,6 2,7 7,8 1,12 1}
+{2 6,8 1,13 1,15 2}
+{7 1,16 2}
+{1 2,16 28,18 1}
+{2 3,7 2}
+{1 1,8 3,9 12,16 9}
+{0 unimportant,2 1,4 1,5 1,16 1}
+{0 unimportant,2 2,8 1}
+{0 unimportant,15 1,16 20}
+{0 unimportant,8 1,16 22}
+{0 unimportant,1 3,3 2,4 6,5 14,9 63,12 2,16 1}
+{0 unimportant,1 1,8 1,16 7}
+{0 unimportant,5 2,16 1}
+{0 unimportant,8 1,16 1}
+{16 20,18 1}
+{2 10,8 1,16 15}
+{2 3,8 1,16 6}
+{1 1,9 1}
+{2 20,3 1,16 14,18 1}
+{9 3,16 1}
+{5 9,6 1}
+{5 1,8 1,16 18}
+{1 1,5 3,16 85}
+{1 1,2 1,8 1,16 4}
+{5 3,16 2}
+{2 14,8 1,16 4}
+{1 1,2 6}
+{5 1,16 1}
+{2 5,8 1}
+{1 1,2 15,7 1,8 1,16 29}
+{8 1,16 1}
+{0 unimportant,4 1,5 3}
+{0 unimportant,10 3}
+{0 unimportant,5 5,9 32,16 3}
+{0 unimportant,2 1,15 1}
+{0 unimportant,8 1,16 1}
+{0 unimportant,4 1,16 1}
+{0 unimportant,5 1,13 1,16 2}
+{0 unimportant,4 1,5 1}
+{0 unimportant,8 1,9 4,16 1}
+{0 unimportant,2 1,7 1,8 7,15 1,16 1,18 1}
+{0 unimportant,2 2,5 1,7 2,15 1}
+{0 unimportant,2 3,16 1,18 1}
+{0 unimportant,2 1,8 2}
+{0 unimportant,1 1,4 2,5 15,9 36,16 2}
+{0 unimportant,4 1,5 6,9 20,16 1}
+{0 unimportant,2 1,4 1,5 1,8 2}
+{0 unimportant,2 6,8 2}
+{0 unimportant,5 1,16 1}
+{0 unimportant,16 5,17 1}
+{0 unimportant,2 7,8 2}
+{0 unimportant,8 2,9 10,15 1,16 37}
+{0 unimportant,1 1,18 1}
+{0 unimportant,9 8,16 1}
+{0 unimportant,5 8,13 1}
+{0 unimportant,2 1,18 1}
+{0 unimportant,1 1,5 1}
+{0 unimportant,1 1,5 1,6 2}
+{0 unimportant,4 1,5 2}
+{0 unimportant,2 1,15 1}
+{0 unimportant,1 2}
+{0 unimportant,2 2,15 1}
+{0 unimportant,1 3,6 2}
+{0 unimportant,4 1,5 1}
+{0 unimportant,2 5,5 1,16 1}
+{9 5,16 6}
+{1 1,2 1,9 1,16 9}
+{2 1,18 1}
+{0 unimportant,1 1,5 1}
+{0 unimportant,5 2,6 2}
+{0 unimportant,4 1,9 1,16 3}
+{0 unimportant,10 4}
+{0 unimportant,16 1}
+{0 unimportant,5 6,16 3}
+{0 unimportant,10 4}
+{0 unimportant,9 2,16 1}
+{0 unimportant,2 1,7 1,18 1}
+{0 unimportant,4 2,8 1}
+{0 unimportant,5 3,9 1,16 1}
+{0 unimportant,5 1,16 1}
+{4 1,5 2,9 3,16 1}
+{0 unimportant,4 3,5 1,9 3,17 1,18 1}
+{0 unimportant,4 1,5 2,8 1}
+{0 unimportant,4 1,5 2,8 1,18 1}
+{0 unimportant,4 1,5 2,9 2,16 1}
+{7 2,8 1,15 1,16 2,18 14}
+{16 4,18 2}
+{0 unimportant,1 2,2 1,4 1,6 1}
+{0 unimportant,16 3,18 1}
+{0 unimportant,9 2,16 2}
+{0 unimportant,7 1,16 1}
+{0 unimportant,5 1,6 1,7 1,8 2,9 18,15 1,16 2,18 1}
+{0 unimportant,13 2,16 3,17 2,18 49}
+{1 6,2 41,3 2,4 3,5 1,6 1,7 2,8 2,12 9,15 1,16 48}
+{1 21,2 1,4 2,6 5,7 1,9 6,12 4,13 46,15 1,16 684,18 5}
+{1 7,4 1,6 3,8 3,9 40,13 5,16 132,17 1}
+{2 199,8 2,11 33,12 2,14 1,15 1,16 5}
+{1 14,2 220,3 13,4 30,5 1,7 1,8 5,12 40,13 3,14 7,15 11,16 110,18 2}
+{1 2,2 33,3 1,4 6,6 1,8 1,12 6,14 3,16 24}
+{1 1,2 7,3 1,4 2,6 8,8 1,12 2,13 2,16 9}
+{0 unimportant,2 2,6 1,8 2,16 3}
+{0 unimportant,2 1,7 1}
+{0 unimportant,1 1,2 3,4 3,6 1,8 1,13 6,16 4}
+{0 unimportant,10 8}
+{0 unimportant,9 1,13 1,16 28}
+{0 unimportant,2 4,7 2,8 1,12 2,16 1}
+{0 unimportant,1 1,2 5,5 1,11 2,12 3,16 1}
+{0 unimportant,1 1,6 2,13 1,16 3}
+{0 unimportant,1 1,10 1}
+{0 unimportant,1 43,4 1,6 3}
+{0 unimportant,1 2,2 17,4 2,6 1,12 1,15 1,16 18}
+{0 unimportant,1 1}
+{0 unimportant,2 5,5 2,8 1,15 1,16 5}
+{0 unimportant,3 1,10 29}
+{0 unimportant,1 2,2 17,4 2,7 1,12 13,13 5,16 31}
+{0 unimportant,1 1,10 19,11 212,14 1}
+{0 unimportant,1 16,3 1,4 18,5 97,9 293,13 1}
+{0 unimportant,2 1,7 1,16 10}
+{0 unimportant,16 8,18 3}
+{0 unimportant,5 1,12 3,16 1}
+{0 unimportant,1 4,10 1,11 5}
+{0 unimportant,1 4,3 1,19 1}
+{0 unimportant,15 1,16 4}
+{0 unimportant,1 4,4 1,5 5,6 1}
+{0 unimportant,1 2,15 1}
+{0 unimportant,2 1,7 1,16 8}
+{0 unimportant,1 1,3 1,5 6,11 5}
+{0 unimportant,2 1,8 1,14 1,16 3}
+{0 unimportant,1 7,5 30,6 1}
+{2 2,5 1,7 8,8 1}
+{1 18,2 54,3 2,4 15,5 1,6 32,8 1,12 2,13 1,14 4,16 9}
+{1 7,2 9,4 2,6 3,13 9,16 17,18 1}
+{1 2,7 1,13 3,16 14}
+{1 4,5 1,13 3,15 1,16 9,17 1}
+{1 2,2 1,5 1,13 3,15 1,16 11,18 1}
+{0 unimportant,1 4,19 7}
+{0 unimportant,1 2,4 5,5 8,9 4,16 2}
+{0 unimportant,12 2}
+{0 unimportant,4 1,5 5}
+{0 unimportant,1 4,4 4,6 1,8 1,9 11,13 3,15 1,16 29}
+{0 unimportant,1 2,4 12,5 34,9 30,12 1,16 2}
+{0 unimportant,4 1,5 1,12 1,16 3}
+{0 unimportant,4 3}
+{0 unimportant,10 10}
+{0 unimportant,4 1,16 5}
+{0 unimportant,10 2}
+{0 unimportant,16 1}
+{0 unimportant,1 2,2 7,4 25}
+{0 unimportant,16 2,17 1,18 5}
+{2 4,7 30,8 10,14 1,15 5,17 2}
+{10 4}
+{1 1,2 4,8 1,14 1}
+{16 5,18 1}
+{2 14,4 1,7 1,8 6,11 1,14 2,15 1,16 2}
+{1 1,2 2,5 2,8 1,16 3,18 4}
+{2 1,5 1}
+{2 2,8 1}
+{2 4,8 1,11 1,14 2,16 1}
+{0 unimportant,1 1,10 1}
+{0 unimportant,4 1,5 1}
+{0 unimportant,5 8,16 3}
+{0 unimportant,5 6,16 1}
+{0 unimportant,4 3,5 8}
+{0 unimportant,10 8,11 4}
+{0 unimportant,1 2,3 1,5 10,9 34,16 2}
+{0 unimportant,1 1,2 2,5 1,16 6}
+{0 unimportant,2 1,5 4,9 2,16 2}
+{0 unimportant,1 1,6 1,11 1}
+{0 unimportant,10 3}
+{0 unimportant,5 3,16 1}
+{0 unimportant,10 3,14 1}
+{0 unimportant,5 2,6 1}
+{0 unimportant,2 1,8 1,11 1}
+{0 unimportant,2 17,9 1}
+{0 unimportant,1 1,5 3,6 1}
+{0 unimportant,1 1,5 5}
+{0 unimportant,2 1,12 1,16 4}
+{0 unimportant,3 1,10 15}
+{0 unimportant,1 1,10 4,11 3}
+{0 unimportant,4 1,5 1}
+{0 unimportant,2 5,8 2,18 2}
+{0 unimportant,10 2}
+{0 unimportant,5 1,16 1}
+{0 unimportant,1 3,2 7,5 34,9 107,12 1,16 5}
+{0 unimportant,4 1,8 2,15 2}
+{0 unimportant,1 1,10 1}
+{0 unimportant,4 1,5 1,16 1}
+{0 unimportant,6 1,16 2}
+{0 unimportant,1 1,4 1,5 1}
+{0 unimportant,5 1,11 1}
+{0 unimportant,5 2,16 1}
+{0 unimportant,1 3,5 1,16 1}
+{0 unimportant,10 2}
+{0 unimportant,5 2,12 1,16 2}
+{0 unimportant,5 2,16 1}
+{0 unimportant,1 2}
+{0 unimportant,1 1,5 1,6 2}
+{0 unimportant,16 1,17 1}
+{0 unimportant,1 1,2 1,5 2,16 3}
+{0 unimportant,1 1,10 5,11 4}
+{0 unimportant,2 5,4 2,5 1,14 2}
+{0 unimportant,4 1,15 1}
+{0 unimportant,4 1}
+{0 unimportant,2 5,7 1,8 1,16 27}
+{0 unimportant,2 1,8 1}
+{0 unimportant,10 3,11 16}
+{0 unimportant,5 1,16 1}
+{0 unimportant,8 5,9 1,16 1}
+{0 unimportant,1 7,4 21,5 2}
+{0 unimportant,1 1,16 3,18 5}
+{0 unimportant,1 1,4 1,5 4,8 3,9 34,16 20}
+{0 unimportant,1 1,2 2,4 2,8 2,11 1}
+{0 unimportant,5 1,6 1}
+{0 unimportant,1 7,6 1}
+{0 unimportant,1 2,2 2,5 2,16 2}
+{0 unimportant,4 1,5 1}
+{0 unimportant,10 3,11 3}
+{0 unimportant,2 7,4 2,7 1,8 2,11 2,16 2}
+{0 unimportant,2 30,16 61,18 1}
+{0 unimportant,1 1,10 1,11 1}
+{0 unimportant,10 5}
+{0 unimportant,3 1,8 3,18 1}
+{0 unimportant,1 5,4 1,5 15,9 41,12 1,16 2}
+{0 unimportant,2 1,15 1,16 1}
+{0 unimportant,2 1,8 1}
+{8 2,16 4,18 1}
+{1 1,2 8,8 1,16 6}
+{0 unimportant,10 4}
+{0 unimportant,4 2,5 8,9 48,16 1}
