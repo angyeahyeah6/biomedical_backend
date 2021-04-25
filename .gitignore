@@ -31,5 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
-
+## local file
 dat_file/
+mvnw
+.DS_store
+._.DS_store
+
