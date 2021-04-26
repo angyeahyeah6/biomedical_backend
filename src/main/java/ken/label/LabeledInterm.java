@@ -10,14 +10,14 @@ import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
-
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.*;
 
 /**
  * Created by lbj23k on 2017/4/13.
  */
-public class LabeledInterm {
+public class LabeledInterm  implements Serializable {
     private static HashSet<String> nonNovelSet;
     private static ArrayList<Attribute> statAttributes;
 
@@ -58,7 +58,7 @@ public class LabeledInterm {
         this.importance = importance;
         this.totalFreq = totalFreq;
         setPredicateInfo();
-//        init();
+        init();
     }
 
     private void init() {
@@ -152,9 +152,9 @@ public class LabeledInterm {
                 sb_BC.append("?,");
             }
         }
-        String sql_AB = "SELECT sum(count) as totalC FROM pmid_count " +
+        String sql_AB = "SELECT sum(count) as totalC FROM pmid_count_mesh " +
                 "WHERE pmid in (" + sb_AB.deleteCharAt(sb_AB.length() - 1) + ")";
-        String sql_BC = "SELECT sum(count) as totalC FROM pmid_count " +
+        String sql_BC = "SELECT sum(count) as totalC FROM pmid_count_mesh " +
                 "WHERE pmid in (" + sb_BC.deleteCharAt(sb_BC.length() - 1) + ")";
         BigDecimal countAB =
                 (BigDecimal) JDBCHelper.query(DbConnector.LITERATURE_YEAR, sql_AB, paramsAB).get(0).get("totalC");

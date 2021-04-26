@@ -3,11 +3,11 @@ package ken.label;
 import ken.util.Utils;
 
 import java.util.List;
-
+import java.io.Serializable;
 /**
  * Created by lbj23k on 2017/4/12.
  */
-public class LabeledInfo implements Comparable<LabeledInfo> {
+public class LabeledInfo implements Comparable<LabeledInfo>, Serializable {
     public String pmid;
     public int year;
     // 1 = ->, 2 = <-

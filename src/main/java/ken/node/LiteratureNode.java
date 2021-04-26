@@ -11,8 +11,9 @@ import ken.util.Utils;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.io.Serializable;
 
-public class LiteratureNode {
+public class LiteratureNode implements Serializable{
     private final String meshName;
     private final int scopeStartYear;
     private final int scopeEndYear;

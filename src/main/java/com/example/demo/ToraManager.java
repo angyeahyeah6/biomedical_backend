@@ -21,7 +21,10 @@ public class ToraManager {
     private static Logger logger = Logger.getLogger("LearningModel");
     public static void main(String[] args) {
         String drug = "Keratin-19";
-
+        String filepath = "./dat_file/instMap/" + drug + ".dat";
+        Map<String, Instances> instMap =
+                (Map<String, Instances>) Utils.readObjectFile(filepath);
+        System.out.println("j");
     }
     // intermidiates : target : predicate num
 

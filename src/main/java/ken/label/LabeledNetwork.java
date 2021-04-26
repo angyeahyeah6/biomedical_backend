@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-
+import java.io.Serializable;
 /**
  * Created by lbj23k on 2017/4/12.
  */
-public class LabeledNetwork {
+public class LabeledNetwork implements Serializable {
     private ArrayList<LabeledInterm> intermediates;
     private LiteratureNode pivotNode;
     private LiteratureNode targetNode;

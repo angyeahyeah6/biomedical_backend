@@ -9,6 +9,7 @@ import ken.node.LiteratureNode;
 import ken.util.DbConnector;
 import ken.util.JDBCHelper;
 import ken.util.Utils;
+import org.springframework.hateoas.mediatype.hal.Jackson2HalModule;
 import weka.core.Instances;
 
 import java.util.*;
@@ -36,16 +37,16 @@ public class InstancePrepare {
         List<String> drugs = new ArrayList<>(perfectRank.keySet());
         //this run very slow, subList focal drug and run by multiple process is a good idea
 //        for(String drug:drugs){
-        for (String drug : drugs.subList(0,1)) {
+        for (String drug : drugs.subList(10, 11)) {
             System.out.println(++count + ":" + drug);
             Map<String, IndexScore> perfectDrugRank = perfectRank.get(drug);
-//            Map<String, Instances> diseaseMap = new HashMap<>();
-            Map<String, ArrayList<PredicateInterm>> intermidiateMap = new HashMap<>();
+            Map<String, Instances> diseaseMap = new HashMap<>();
             for (String disease : perfectDrugRank.keySet()) {
                 PredicateNetwork predicateNet = new PredicateNetwork(drug, disease, 1809, 2015);
-                intermidiateMap.put(disease, predicateNet.getIntermediates());
+                diseaseMap.put(disease, predicateNet.getInst());
             }
-            Utils.writeObject(intermidiateMap, "dat_file/intermediateMap/" + drug + ".dat");
+            Utils.writeObject(diseaseMap, "dat_file/instMap/" + drug + ".dat");
+            diseaseMap = new HashMap<>();
         }
 
     }

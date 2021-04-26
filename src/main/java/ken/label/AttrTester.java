@@ -1,8 +1,10 @@
 package ken.label;
 
+import ken.evaluation.IndexScore;
 import ken.model.Classifier;
 import ken.util.DbConnector;
 import ken.util.JDBCHelper;
+import ken.util.Utils;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Evaluation;
 import weka.core.Attribute;
@@ -14,10 +16,12 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToWordVector;
 
+import javax.rmi.CORBA.Util;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.instrument.Instrumentation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,8 +39,9 @@ public class AttrTester {
 //            data.setClassIndex(data.numAttributes() - 1);
 //            attrTester.evaluateModel(classifier, data);
 //            attrTester.createContentArffFile();
-            attrTester.createStatArffFile();
-            attrTester.mergeInst();
+//            attrTester.createStatArffFile();
+            attrTester.getPredicateGraph();
+//            attrTester.mergeInst();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,7 +69,14 @@ public class AttrTester {
             System.out.println(a_name + ", " + c_name + ", " + year);
             pgs.add(new LabeledNetwork(a_name, c_name, year, link_id, important));
         }
-        return pgs;
+        try{
+            Utils.writeObject(pgs, "output/dat/predicateGraph.dat");
+            return pgs;
+        }catch (Exception e){
+            e.printStackTrace();
+            return pgs;
+        }
+
     }
 
     /*
@@ -122,17 +134,36 @@ public class AttrTester {
     }
 
     public void createStatArffFile() throws IOException {
-        ArrayList<LabeledNetwork> pgs = getPredicateGraph();
+//        ArrayList<LabeledNetwork> pgs = getPredicateGraph();
+        ArrayList<LabeledNetwork> pgs =
+                (ArrayList<LabeledNetwork>) Utils.readObjectFile("output/dat/predicateGraph.dat");
         ArrayList<Attribute> attributes = LabeledInterm.getStatAttributes();
         Instances dataSet = new Instances("statAttr", attributes, 0);
         dataSet.setClassIndex(dataSet.numAttributes() - 1);
-        for (LabeledNetwork pg : pgs) {
-            for (LabeledInterm interm : pg.getIntermediate()) {
-                Instance inst = interm.getStatInst();
-                dataSet.add(inst);
+        int batch = 0;
+        int cnt = 0;
+        try{
+            for (LabeledNetwork pg : pgs) {
+                for (LabeledInterm interm : pg.getIntermediate()) {
+                    Instance inst = interm.getStatInst();
+                    dataSet.add(inst);
+                }
+                cnt += 1;
+                if(cnt == 20){
+                    writeAttr("output/attr/stat_"+ batch +".arff", dataSet);
+                    dataSet = new Instances("statAttr", attributes, 0);
+                    dataSet.setClassIndex(dataSet.numAttributes() - 1);
+                    cnt = 0;
+                    batch += 1;
+                }
             }
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println(cnt);
+//            writeAttr("output/attr/stat_500.arff", dataSet);
         }
-        writeAttr("output/attr/new_stat.arff", dataSet);
+
+//        writeAttr("output/attr/stat_500.arff", dataSet);
     }
 
 
