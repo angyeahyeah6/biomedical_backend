@@ -19,7 +19,7 @@ public class ToraController {
     public Map getPredictRank(@RequestBody InPredicate getPredicate) {
         String drug = getPredicate.drugName;
         ToraManager manager = new ToraManager();
-        Integer displayCount = 0;
+        Integer displayCount = 10;
         // c ranking
         List<IndexScore> diseaseRank = manager.predictRank(drug);
 
@@ -47,9 +47,9 @@ public class ToraController {
                 }
             }
         }
-        for(IndexScore score : diseaseRank.subList(0, displayCount)){
-            IntermediatePredicatwithDisease.remove(score.getName());
-        }
+//        for(IndexScore score : diseaseRank.subList(0, displayCount)){
+//            IntermediatePredicatwithDisease.remove(score.getName());
+//        }
         return IntermediatePredicatwithDisease;
     }
     @GetMapping("/all_drug")
