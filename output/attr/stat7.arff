@@ -1,0 +1,38 @@
+@relation statAttr
+
+@attribute count(AB) numeric
+@attribute count(BC) numeric
+@attribute 'normalized count(AB)' numeric
+@attribute 'normalized count(BC)' numeric
+@attribute PMI(AB) numeric
+@attribute PMI(BC) numeric
+@attribute entropy(AB) numeric
+@attribute entropy(BC) numeric
+@attribute 'jaccard similarity(AB)' numeric
+@attribute 'jaccard similarity(BC)' numeric
+@attribute 'NMS similarity(AB)' numeric
+@attribute 'NMS similarity(BC)' numeric
+@attribute 'ontology mentioned(AB)' numeric
+@attribute 'ontology mentioned(BC)' numeric
+@attribute frequency(B) numeric
+@attribute 'neighbor count(B)' numeric
+@attribute novel(B) numeric
+@attribute 'time to indication(AB)' numeric
+@attribute 'time to indication(BC)' numeric
+@attribute label {important,unimportant}
+
+@data
+8,20,0.8,0.235294,5.002618,2.80771,0.188385,0.177087,0.002578,0.009235,0.461817,0.466161,1,1,4612,811,1,1,1,important
+1,22,0.333333,0.392857,6.161096,6.14094,0,0,0.011561,0.016456,0.640129,0.617557,0,0,181,96,1,12,1,important
+3,7,0.75,0.538462,3.037685,0.773785,0.318257,0.205058,0.000692,0.00336,0.341341,0.307365,0,0,12339,1568,1,1,1,important
+15,10,0.483871,0.227273,7.34863,3.831967,0.250201,0.162541,0.019886,0.00892,0.652268,0.503052,0,0,828,236,1,2,1,important
+1,2,0.25,0.666667,5.887322,3.469272,0,0,0.005128,0.000615,0.560919,0.298322,0,0,238,73,1,9,1,important
+1,30,0.5,0.545455,3.989992,4.279992,0,0.122465,0.00096,0.015183,0.376263,0.558474,0,0,1587,418,1,7,1,important
+2,3,0.5,0.333333,4.489539,1.783807,0,0,0.00145,0.003211,0.412089,0.367408,0,0,1926,465,1,15,1,important
+1,8,0.25,0.296296,4.359258,3.327502,0,0.188385,0.001255,0.005866,0.402525,0.452648,0,0,1097,331,1,13,2,important
+1,1,0.25,0.333333,3.324638,0.21344,0,0,0.000554,0.000309,0.323879,0.062124,0,0,3087,493,1,9,1,important
+1,3,0.333333,0.428571,3.865163,1.852577,0,0.366204,0.000721,0.001065,0.348779,0.231059,0,0,1798,550,1,22,5,unimportant
+1,2,0.5,0.125,5.735575,3.317525,0,0,0.004587,0.001821,0.545832,0.394053,1,1,277,101,1,23,1,unimportant
+1,20,0.25,0.344828,0.264018,0.148552,0,0,0.000022,0.000737,0.029509,0.097167,0,0,65879,5219,0,7,1,unimportant
+1,94,1,0.348148,0.240184,1.672281,0,0.119454,0.00002,0.002714,0.018205,0.260327,0,0,67468,5766,0,28,1,unimportant
+1,2,1,1,1.722156,-0.695894,0,0,0.000087,0.000231,0.152657,0,0,0,15328,1646,1,14,1,unimportant

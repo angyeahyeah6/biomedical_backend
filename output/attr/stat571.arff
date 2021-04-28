@@ -1,0 +1,24 @@
+@relation statAttr
+
+@attribute count(AB) numeric
+@attribute count(BC) numeric
+@attribute 'normalized count(AB)' numeric
+@attribute 'normalized count(BC)' numeric
+@attribute PMI(AB) numeric
+@attribute PMI(BC) numeric
+@attribute entropy(AB) numeric
+@attribute entropy(BC) numeric
+@attribute 'jaccard similarity(AB)' numeric
+@attribute 'jaccard similarity(BC)' numeric
+@attribute 'NMS similarity(AB)' numeric
+@attribute 'NMS similarity(BC)' numeric
+@attribute 'ontology mentioned(AB)' numeric
+@attribute 'ontology mentioned(BC)' numeric
+@attribute frequency(B) numeric
+@attribute 'neighbor count(B)' numeric
+@attribute novel(B) numeric
+@attribute 'time to indication(AB)' numeric
+@attribute 'time to indication(BC)' numeric
+@attribute label {important,unimportant}
+
+@data
