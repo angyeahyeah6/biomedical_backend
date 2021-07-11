@@ -1,0 +1,103 @@
+package website.api;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import website.api.inputClass.InDetailPredicate;
+import website.api.inputClass.InEval;
+import website.api.inputClass.InPredicate;
+import weng.labelSys.Predict;
+import weng.util.Utils;
+import weng.util.file.RepurposingEval;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+@CrossOrigin("http://localhost:8081")
+@RestController
+@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+public class ToraController {
+    @PostMapping("/get_predicate")
+    public Map getPredictRank(@RequestBody InPredicate getPredicate) throws SQLException {
+        int topK = 30;
+        String drug = getPredicate.drugName;
+        int endYear = getPredicate.endYear;
+        int classifierType = getPredicate.classifierType;
+        Predict predict = new Predict(
+                drug,
+                endYear,
+                topK,
+                classifierType);
+        predict.run();
+        return  predict.getCompletePath(drug, endYear);
+    }
+//    public Map getPredictRank(@RequestBody InPredicate getPredicate) {
+//        String drug = getPredicate.drugName;
+//        ToraManager manager = new ToraManager();
+//        Integer displayCount = 10;
+//        // c ranking
+//        List<IndexScore> diseaseRank = manager.predictRank(drug);
+//
+//        Map<String, Map<String, Map<String, Double>>> IntermediatePredicatwithDisease = new HashMap<>();
+//
+//        // find intermidiate b
+//        for(IndexScore score : diseaseRank.subList(0, displayCount)) {
+//            System.out.println(score.getName());
+//            Map<String, Map<String, Map<String, Double>>> temp = new HashMap<>();
+//            // read pre caculate file or recaculate intermidiates
+//            try {
+//                String fileptah = "dat_file/intermediateMap/" + drug + "_" + score.getName() + ".dat";
+//                temp = (Map<String, Map<String, Map<String, Double>>>) Utils.readObjectFile(fileptah);
+//            } catch (Exception e) {
+//                temp = ToraManager.getIntermediates(drug, diseaseRank.get(0).getName());
+//            }
+//
+//            // merge duplicate b
+//            for(String b : temp.keySet()){
+//                if(IntermediatePredicatwithDisease.containsKey(b)){
+//                    IntermediatePredicatwithDisease.get(b).putAll(temp.get(b));
+//                }
+//                else{
+//                    IntermediatePredicatwithDisease.put(b, temp.get(b));
+//                }
+//            }
+//        }
+//        for(IndexScore score : diseaseRank.subList(0, displayCount)){
+//            IntermediatePredicatwithDisease.remove(score.getName());
+//        }
+//        return IntermediatePredicatwithDisease;
+//    }
+    @GetMapping("/all_drug")
+    public List<String> getAllDrug() {
+        List<String> drugsAll = new Utils().readLineFile(RepurposingEval.focalDrugs);
+        return drugsAll;
+    }
+    @PostMapping("/get_eval")
+    public Map<String, Map<String, Object>> getRankDisease(@RequestBody InEval getEval) throws SQLException {
+        String drug = getEval.drugName;
+        int endYear = getEval.endYear;
+        int classifierType = getEval.classifierType;
+        int topK = 30;
+        Predict predict = new Predict(
+                drug,
+                endYear,
+                topK,
+                classifierType);
+        return predict.getOrderTarget(drug, endYear);
+    }
+    @PostMapping("/get_detail_predicate")
+    public List<List<Object>> getPathDetail(@RequestBody InDetailPredicate inDetailPredicate) throws SQLException {
+        String drug = inDetailPredicate.drugName;
+        int endYear = inDetailPredicate.endYear;
+        int classifierType = inDetailPredicate.classifierType;
+        String disease = inDetailPredicate.c_name;
+        int topK = 30;
+        Predict predict = new Predict(
+                drug,
+                endYear,
+                topK,
+                classifierType);
+        return predict.getDetailPath(drug, endYear, disease);
+    }
+
+}
+

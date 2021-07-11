@@ -1,0 +1,54 @@
+package weng.util.calculator;
+
+import weng.util.JDBCHelper;
+
+import java.math.BigDecimal;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.List;
+
+public class WeightedNormalizedPredicationCalc {
+    public static double count(Connection connLit,
+                               List<String> pmids) {
+        HashMap<String, Integer> relationFreq = relationFreq(pmids);
+        HashMap<String, Integer> totalFreq = totalFreq(pmids, connLit);
+        return weightedFreq(relationFreq, totalFreq);
+    }
+
+    public static double weightedFreq(HashMap<String, Integer> relationFreqByPmid,
+                                      HashMap<String, Integer> totalFreqByPmid) {
+        double weightedPredicationCount = 0.0f;
+        for (String pmid : relationFreqByPmid.keySet()) {
+            double relationFreq = relationFreqByPmid.get(pmid);
+            double totalFreq = totalFreqByPmid.get(pmid);
+            weightedPredicationCount += (1 / totalFreq) * relationFreq;
+        }
+        return weightedPredicationCount;
+    }
+
+    public static HashMap<String, Integer> totalFreq(List<String> pmids,
+                                                     Connection connLit) {
+        HashMap<String, Integer> totalFreqByPmid = new HashMap<>();
+        for (String pmid : pmids) {
+            Object[] params = {pmid};
+            String sql = "SELECT sum(count) as totalC FROM pmid_count_umls WHERE pmid=?";
+            JDBCHelper jdbcHelper = new JDBCHelper();
+            BigDecimal count = (BigDecimal) jdbcHelper.query(connLit, sql, params).get(0).get("totalC");
+            totalFreqByPmid.put(pmid, count.intValue());
+        }
+        return totalFreqByPmid;
+    }
+
+    public static HashMap<String, Integer> relationFreq(List<String> pmids) {
+        HashMap<String, Integer> relationFreqByPmid = new HashMap<>();
+        for (String pmid : pmids) {
+            int relationFreq = 0;
+            if (relationFreqByPmid.containsKey(pmid)) {
+                relationFreq = relationFreqByPmid.get(pmid);
+            }
+            relationFreq += 1;
+            relationFreqByPmid.put(pmid, relationFreq);
+        }
+        return relationFreqByPmid;
+    }
+}

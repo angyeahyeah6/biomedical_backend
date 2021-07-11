@@ -1,0 +1,11 @@
+ANAT|Anatomy|T017|Anatomical Structure
+ANAT|Anatomy|T029|Body Location or Region
+ANAT|Anatomy|T023|Body Part, Organ, or Organ Component
+ANAT|Anatomy|T030|Body Space or Junction
+ANAT|Anatomy|T031|Body Substance
+ANAT|Anatomy|T022|Body System
+ANAT|Anatomy|T025|Cell
+ANAT|Anatomy|T026|Cell Component
+ANAT|Anatomy|T018|Embryonic Structure
+ANAT|Anatomy|T021|Fully Formed Anatomical Structure
+ANAT|Anatomy|T024|Tissue

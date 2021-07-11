@@ -1,0 +1,30 @@
+A	C	endYear	fdaYear
+Amphotericin B	Leishmaniasis, Visceral	1990	1997
+Bromocriptine	Diabetes Mellitus, Non-Insulin-Dependent	1991	2009
+celecoxib	Adenomatous Polyposis Coli	1999	1999
+Colesevelam	Diabetes Mellitus, Non-Insulin-Dependent	2006	2008
+Finasteride	Alopecia	1993	1997
+Fluoxetine	Premenstrual dysphoric disorder	1996	2000
+Galantamine	Alzheimer's Disease	1989	2001
+Methotrexate	Rheumatoid Arthritis	1975	1980
+Methotrexate	Psoriasis	1968	1971
+Minoxidil	Alopecia	1982	1988
+Paroxetine	Hot flushes	1999	2013
+Raloxifene	Malignant neoplasm of breast	1997	2007
+sildenafil	Hypertension, Pulmonary	1999	2005
+Thalidomide	Multiple Myeloma	1998	2006
+Zidovudine	Acquired Immunodeficiency Syndrome	1985	2008
+Ceftriaxone	Amyotrophic Lateral Sclerosis	1991	-1
+Metformin	Malignant neoplasm of breast	2007	-1
+Nitric Oxide	Respiratory Distress Syndrome, Adult	2013	-1
+Lidocaine	Asthma	1966	-1
+gabapentin	Postherpetic neuralgia	1995	2002
+gabapentin	Restless Legs Syndrome	1995	2011
+pramipexol	Restless Legs Syndrome	1997	2006
+milnacipran	Fibromyalgia	2003	2009
+topiramate	Obesity	1986	2012
+ropinirole	Restless Legs Syndrome	1998	2005
+sibutramine	Obesity	1994	1997
+topiramate	Obesity	1986	2012
+miltefosine	Leishmaniasis	2000	2014
+sildenafil	Erectile dysfunction		1998

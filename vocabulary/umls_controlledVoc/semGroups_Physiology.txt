@@ -1,0 +1,9 @@
+PHYS|Physiology|T043|Cell Function
+PHYS|Physiology|T201|Clinical Attribute
+PHYS|Physiology|T045|Genetic Function
+PHYS|Physiology|T041|Mental Process
+PHYS|Physiology|T044|Molecular Function
+PHYS|Physiology|T032|Organism Attribute
+PHYS|Physiology|T040|Organism Function
+PHYS|Physiology|T042|Organ or Tissue Function
+PHYS|Physiology|T039|Physiologic Function

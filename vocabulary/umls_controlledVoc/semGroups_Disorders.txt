@@ -1,0 +1,12 @@
+DISO|Disorders|T020|Acquired Abnormality
+DISO|Disorders|T190|Anatomical Abnormality
+DISO|Disorders|T049|Cell or Molecular Dysfunction
+DISO|Disorders|T019|Congenital Abnormality
+DISO|Disorders|T047|Disease or Syndrome
+DISO|Disorders|T050|Experimental Model of Disease
+DISO|Disorders|T033|Finding
+DISO|Disorders|T037|Injury or Poisoning
+DISO|Disorders|T048|Mental or Behavioral Dysfunction
+DISO|Disorders|T191|Neoplastic Process
+DISO|Disorders|T046|Pathologic Function
+DISO|Disorders|T184|Sign or Symptom

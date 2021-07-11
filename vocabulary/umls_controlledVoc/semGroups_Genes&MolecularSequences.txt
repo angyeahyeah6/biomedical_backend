@@ -1,0 +1,5 @@
+GENE|Genes & Molecular Sequences|T087|Amino Acid Sequence
+GENE|Genes & Molecular Sequences|T088|Carbohydrate Sequence
+GENE|Genes & Molecular Sequences|T028|Gene or Genome
+GENE|Genes & Molecular Sequences|T085|Molecular Sequence
+GENE|Genes & Molecular Sequences|T086|Nucleotide Sequence

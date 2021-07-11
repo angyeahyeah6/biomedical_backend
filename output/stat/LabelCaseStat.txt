@@ -1,5 +1,0 @@
-Create from Statistic.statLabelCase()
-
-
-very important:33, important:47, unimportant:280, intermC: 360, caseC: 14
-avg very important:2.357143, important:3.357143, unimportant:20.000000, intermC: 25.714286

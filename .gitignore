@@ -36,4 +36,5 @@ dat_file/
 mvnw
 .DS_store
 ._.DS_store
-
+output/dat/
+output/attr/

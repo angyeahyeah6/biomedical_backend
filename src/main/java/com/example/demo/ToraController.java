@@ -47,9 +47,9 @@ public class ToraController {
                 }
             }
         }
-        for(IndexScore score : diseaseRank.subList(0, displayCount)){
-            IntermediatePredicatwithDisease.remove(score.getName());
-        }
+//        for(IndexScore score : diseaseRank.subList(0, displayCount)){
+//            IntermediatePredicatwithDisease.remove(score.getName());
+//        }
         return IntermediatePredicatwithDisease;
     }
     @GetMapping("/all_drug")

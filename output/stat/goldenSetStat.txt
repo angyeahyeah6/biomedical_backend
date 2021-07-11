@@ -1,3 +1,0 @@
-Initial size: 4023
-Filter no score 3: 2630
-Filter by ratio (#score>0/#total>0.01): 1288
