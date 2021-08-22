@@ -109,6 +109,10 @@ public class Predict {
 
             // check if the drug (include classifier type and time interval ) is train already
             boolean isPredictDrugDuplicate = examinePredictDrugDuplicate(connLS);
+
+            if(isPredictDrugDuplicate){
+                return;
+            }
             // insert for "predict_drug"
             insertPredictCase(isPredictDrugDuplicate, connLS);
 
@@ -150,6 +154,8 @@ public class Predict {
 
         int cnt = 0;
         for(DiseaseScore d : DiseaseScores){
+            System.out.println(d.getName());
+            System.out.println(d.getScore());
             Map<String, Object> eval = new HashMap<>();
             eval.put("id",cnt);
             eval.put("eval1", d.getScore());
