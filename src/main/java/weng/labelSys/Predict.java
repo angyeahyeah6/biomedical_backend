@@ -1,7 +1,6 @@
 package weng.labelSys;
 
 import com.mongodb.DBCollection;
-import weka.core.pmml.jaxbbindings.True;
 import weng.evaluation.IndexScore;
 import weng.feature.SemanticType;
 import weng.network.PredictNetwork;
@@ -19,7 +18,6 @@ import weng.util.predict.DiseaseScore;
 import weng.util.predict.Intermediate;
 import weng.util.predict.Path;
 
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -30,7 +28,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 /**
  * Created by weng on 2017/10/28.
@@ -110,32 +107,32 @@ public class Predict {
 
             // check if the drug (include classifier type and time interval ) is train already
             boolean isPredictDrugDuplicate = examinePredictDrugDuplicate(connLS);
-
+            isPredictDrugDuplicate = false;
 //            if(isPredictDrugDuplicate){
 //                return;
 //            }
             // insert for "predict_drug"
-            insertPredictCase(isPredictDrugDuplicate, connLS);
+//            insertPredictCase(isPredictDrugDuplicate, connLS);
 
             boolean runOldModel = false;
             // find id of the predict drug
             int predictDrugId = predictDrugId(connLS);
 
             // insert for "predict_score" and insert "predict_important_b"
-//            constructNetwork(runOldModel, predictDrugId, isPredictDrugDuplicate, connLit, connLS, connSem, umlsCuiNameMap, umlsNameCuiMap,
-//                    collNeighborCountPre_s, collPredicationPre_s_ref, collNeighborCoOccurPre, collNeighborCoOccurPre_ref);
+            constructNetwork(runOldModel, predictDrugId, isPredictDrugDuplicate, connLit, connLS, connSem, umlsCuiNameMap, umlsNameCuiMap,
+                    collNeighborCountPre_s, collPredicationPre_s_ref, collNeighborCoOccurPre, collNeighborCoOccurPre_ref);
 
 
             // get top k disease (C)
-            List<Disease> topKDiseases = topKDisease(isPredictDrugDuplicate, predictDrugId, connLS);
-            this.topKDiseases = topKDiseases;
+//            List<Disease> topKDiseases = topKDisease(isPredictDrugDuplicate, predictDrugId, connLS);
+//            this.topKDiseases = topKDiseases;
             // insert for all the other
-            insertResults(topKDiseases, runOldModel, predictDrugId, umlsCuiNameMap, connLS, connSem, connLit);
+//            insertResults(topKDiseases, runOldModel, predictDrugId, umlsCuiNameMap, connLS, connSem, connLit);
 
             connLS.close();
             connSem.close();
             connLit.close();
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
 //        } catch (IOException e) {
@@ -370,12 +367,10 @@ public class Predict {
         logger.info("[Get Intermediate by Disease Id] ");
 
         List<Intermediate> Intermediates = new ArrayList<>();
-        String insertSql = "SELECT `id`, `b_name`, `importance`, `b_id` FROM `" + MySqlDb.predict_intermediate + "` WHERE pre_disease_id =?and importance>?";;
+        String insertSql = "SELECT `id`, `b_name`, `importance`, `b_id` FROM `" + MySqlDb.predict_intermediate + "` WHERE pre_disease_id =?";;
         try {
             PreparedStatement ps = connLS.prepareStatement(insertSql);
             ps.setInt(1, predictDiseaseId);
-            // only get important path
-            ps.setInt(1, 0);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Intermediates.add(
