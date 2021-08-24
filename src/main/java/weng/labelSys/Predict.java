@@ -108,11 +108,11 @@ public class Predict {
             // check if the drug (include classifier type and time interval ) is train already
             boolean isPredictDrugDuplicate = examinePredictDrugDuplicate(connLS);
             isPredictDrugDuplicate = false;
-//            if(isPredictDrugDuplicate){
-//                return;
-//            }
+            if(isPredictDrugDuplicate){
+                return;
+            }
             // insert for "predict_drug"
-//            insertPredictCase(isPredictDrugDuplicate, connLS);
+            insertPredictCase(isPredictDrugDuplicate, connLS);
 
             boolean runOldModel = false;
             // find id of the predict drug
@@ -124,10 +124,10 @@ public class Predict {
 
 
             // get top k disease (C)
-//            List<Disease> topKDiseases = topKDisease(isPredictDrugDuplicate, predictDrugId, connLS);
-//            this.topKDiseases = topKDiseases;
+            List<Disease> topKDiseases = topKDisease(isPredictDrugDuplicate, predictDrugId, connLS);
+            this.topKDiseases = topKDiseases;
             // insert for all the other
-//            insertResults(topKDiseases, runOldModel, predictDrugId, umlsCuiNameMap, connLS, connSem, connLit);
+            insertResults(topKDiseases, runOldModel, predictDrugId, umlsCuiNameMap, connLS, connSem, connLit);
 
             connLS.close();
             connSem.close();
