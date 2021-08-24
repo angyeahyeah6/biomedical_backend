@@ -27,7 +27,7 @@ public class ToraController {
                 endYear,
                 topK,
                 classifierType);
-        predict.run();
+//        predict.run();
         return  predict.getCompletePath(drug, endYear);
     }
     @GetMapping("/all_drug")
