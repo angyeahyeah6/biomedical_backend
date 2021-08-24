@@ -16,20 +16,20 @@ import java.util.Map;
 @RestController
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class ToraController {
-    @PostMapping("/get_predicate")
-    public Map getPredictRank(@RequestBody InPredicate getPredicate) throws SQLException {
-        int topK = 30;
-        String drug = getPredicate.drugName;
-        int endYear = getPredicate.endYear;
-        int classifierType = getPredicate.classifierType;
-        Predict predict = new Predict(
-                drug,
-                endYear,
-                topK,
-                classifierType);
-        predict.run();
-        return  predict.getCompletePath(drug, endYear);
-    }
+//    @PostMapping("/get_predicate")
+//    public Map getPredictRank(@RequestBody InPredicate getPredicate) throws SQLException {
+//        int topK = 30;
+//        String drug = getPredicate.drugName;
+//        int endYear = getPredicate.endYear;
+//        int classifierType = getPredicate.classifierType;
+//        Predict predict = new Predict(
+//                drug,
+//                endYear,
+//                topK,
+//                classifierType);
+//        predict.run();
+//        return  predict.getCompletePath(drug, endYear);
+//    }
 //    public Map getPredictRank(@RequestBody InPredicate getPredicate) {
 //        String drug = getPredicate.drugName;
 //        ToraManager manager = new ToraManager();

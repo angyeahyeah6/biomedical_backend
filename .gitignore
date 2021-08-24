@@ -1,4 +1,7 @@
 HELP.md
+.DS_Store
+output/
+dat_file/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

@@ -30,6 +30,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  * Created by weng on 2017/10/28.
@@ -110,9 +111,9 @@ public class Predict {
             // check if the drug (include classifier type and time interval ) is train already
             boolean isPredictDrugDuplicate = examinePredictDrugDuplicate(connLS);
 
-            if(isPredictDrugDuplicate){
-                return;
-            }
+//            if(isPredictDrugDuplicate){
+//                return;
+//            }
             // insert for "predict_drug"
             insertPredictCase(isPredictDrugDuplicate, connLS);
 
@@ -121,8 +122,8 @@ public class Predict {
             int predictDrugId = predictDrugId(connLS);
 
             // insert for "predict_score" and insert "predict_important_b"
-            constructNetwork(runOldModel, predictDrugId, isPredictDrugDuplicate, connLit, connLS, connSem, umlsCuiNameMap, umlsNameCuiMap,
-                    collNeighborCountPre_s, collPredicationPre_s_ref, collNeighborCoOccurPre, collNeighborCoOccurPre_ref);
+//            constructNetwork(runOldModel, predictDrugId, isPredictDrugDuplicate, connLit, connLS, connSem, umlsCuiNameMap, umlsNameCuiMap,
+//                    collNeighborCountPre_s, collPredicationPre_s_ref, collNeighborCoOccurPre, collNeighborCoOccurPre_ref);
 
 
             // get top k disease (C)
@@ -136,9 +137,10 @@ public class Predict {
             connLit.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
     public Map<String, Map<String, Object>> getOrderTarget(String drug, int endYear) throws SQLException {
         int startYear = 1809;
@@ -368,10 +370,12 @@ public class Predict {
         logger.info("[Get Intermediate by Disease Id] ");
 
         List<Intermediate> Intermediates = new ArrayList<>();
-        String insertSql = "SELECT `id`, `b_name`, `importance`, `b_id` FROM `" + MySqlDb.predict_intermediate + "` WHERE pre_disease_id =?";
+        String insertSql = "SELECT `id`, `b_name`, `importance`, `b_id` FROM `" + MySqlDb.predict_intermediate + "` WHERE pre_disease_id =?and importance>?";;
         try {
             PreparedStatement ps = connLS.prepareStatement(insertSql);
             ps.setInt(1, predictDiseaseId);
+            // only get important path
+            ps.setInt(1, 0);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Intermediates.add(
