@@ -342,6 +342,9 @@ public class LiteratureNode {
                 BasicDBList list = (BasicDBList) cursorInfo.next().get(NeighborCooccur.neighborInfo);
                 for (Object l : list) {
                     JSONObject json = new JSONObject((Map) l);
+                    if(Integer.valueOf(json.get("year").toString()) >= getEndYear()){
+                        continue;
+                    }
                     String neighborCui = String.valueOf(json.get(NeighborCooccur.neighbor));
                     String neighborName = umlsCuiNameMap.get(neighborCui);
                     if (neighborName != null) {

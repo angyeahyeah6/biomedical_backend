@@ -1,6 +1,7 @@
 package weng.util.predict;
 
 public class Disease {
+    // predict score id
     private int id;
     private String name;
 

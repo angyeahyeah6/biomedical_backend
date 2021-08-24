@@ -1,24 +1,18 @@
 package weng.util;
 
 
-import weka.core.Instances;
-import weka.core.converters.ArffSaver;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import org.simpleflatmapper.csv.CsvParser;
 import org.simpleflatmapper.csv.CsvReader;
+import weka.core.Instances;
+import weka.core.converters.ArffSaver;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
 
