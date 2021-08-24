@@ -2,10 +2,10 @@ package weng.util.predict;
 
 public class Intermediate {
     private int id;
-    private boolean important;
+    private int important;
     private String name;
     private String cui;
-    public Intermediate(int id, boolean important, String cui, String name){
+    public Intermediate(int id, int important, String cui, String name){
         this.id = id;
         this.important = important;
         this.cui= cui;
@@ -16,7 +16,7 @@ public class Intermediate {
         return id;
     }
 
-    public boolean getImportant() {
+    public int getImportant() {
         return important;
     }
 
