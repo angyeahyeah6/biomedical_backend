@@ -174,7 +174,10 @@ public class Predict {
 
         // run old model
         boolean runOldModel = false;
-        // get data from predict_diseases
+
+        // get top k disease from predict_score table
+        List<Disease> topKDiseases = topKDisease(false, predictDrugId, connLS);
+
         List<Disease> Diseases = getDisease(predictDrugId, connLS);
 
         // get intermediate from predict_intermediate
@@ -367,16 +370,18 @@ public class Predict {
         logger.info("[Get Intermediate by Disease Id] ");
 
         List<Intermediate> Intermediates = new ArrayList<>();
-        String insertSql = "SELECT `id`, `b_name`, `importance`, `b_id` FROM `" + MySqlDb.predict_intermediate + "` WHERE pre_disease_id =?";;
+//        List<Map<String, Object>> Intermediates = new ArrayList<>();
+        String insertSql = "SELECT `id`, `b_name`, `importance`, `b_id` FROM `" + MySqlDb.predict_intermediate + "` WHERE pre_disease_id =? and importance>?";;
         try {
             PreparedStatement ps = connLS.prepareStatement(insertSql);
             ps.setInt(1, predictDiseaseId);
+            ps.setInt(2, 0);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Intermediates.add(
                     new Intermediate(
                         rs.getInt("id"),
-                        rs.getBoolean("importance"),
+                        rs.getInt("importance"),
                         rs.getString("b_id"),
                         rs.getString("b_name")
                     )
