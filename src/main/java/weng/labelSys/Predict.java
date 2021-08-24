@@ -217,6 +217,10 @@ public class Predict {
         List<Intermediate> Intermediates = getIntermediateByDisease(predictDiseaseId, connLS);
 
         for (Intermediate i : Intermediates){
+            // only get important b's
+            if(i.getImportant() == 0){
+                continue;
+            }
             Path path = new Path(i.getName(), disease);
 
             // get bc relation (relation type set to 2)

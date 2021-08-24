@@ -16,56 +16,20 @@ import java.util.Map;
 @RestController
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class ToraController {
-//    @PostMapping("/get_predicate")
-//    public Map getPredictRank(@RequestBody InPredicate getPredicate) throws SQLException {
-//        int topK = 30;
-//        String drug = getPredicate.drugName;
-//        int endYear = getPredicate.endYear;
-//        int classifierType = getPredicate.classifierType;
-//        Predict predict = new Predict(
-//                drug,
-//                endYear,
-//                topK,
-//                classifierType);
-//        predict.run();
-//        return  predict.getCompletePath(drug, endYear);
-//    }
-//    public Map getPredictRank(@RequestBody InPredicate getPredicate) {
-//        String drug = getPredicate.drugName;
-//        ToraManager manager = new ToraManager();
-//        Integer displayCount = 10;
-//        // c ranking
-//        List<IndexScore> diseaseRank = manager.predictRank(drug);
-//
-//        Map<String, Map<String, Map<String, Double>>> IntermediatePredicatwithDisease = new HashMap<>();
-//
-//        // find intermidiate b
-//        for(IndexScore score : diseaseRank.subList(0, displayCount)) {
-//            System.out.println(score.getName());
-//            Map<String, Map<String, Map<String, Double>>> temp = new HashMap<>();
-//            // read pre caculate file or recaculate intermidiates
-//            try {
-//                String fileptah = "dat_file/intermediateMap/" + drug + "_" + score.getName() + ".dat";
-//                temp = (Map<String, Map<String, Map<String, Double>>>) Utils.readObjectFile(fileptah);
-//            } catch (Exception e) {
-//                temp = ToraManager.getIntermediates(drug, diseaseRank.get(0).getName());
-//            }
-//
-//            // merge duplicate b
-//            for(String b : temp.keySet()){
-//                if(IntermediatePredicatwithDisease.containsKey(b)){
-//                    IntermediatePredicatwithDisease.get(b).putAll(temp.get(b));
-//                }
-//                else{
-//                    IntermediatePredicatwithDisease.put(b, temp.get(b));
-//                }
-//            }
-//        }
-//        for(IndexScore score : diseaseRank.subList(0, displayCount)){
-//            IntermediatePredicatwithDisease.remove(score.getName());
-//        }
-//        return IntermediatePredicatwithDisease;
-//    }
+    @PostMapping("/get_predicate")
+    public Map getPredictRank(@RequestBody InPredicate getPredicate) throws SQLException {
+        int topK = 30;
+        String drug = getPredicate.drugName;
+        int endYear = getPredicate.endYear;
+        int classifierType = getPredicate.classifierType;
+        Predict predict = new Predict(
+                drug,
+                endYear,
+                topK,
+                classifierType);
+        predict.run();
+        return  predict.getCompletePath(drug, endYear);
+    }
     @GetMapping("/all_drug")
     public List<String> getAllDrug() {
         List<String> drugsAll = new Utils().readLineFile(RepurposingEval.focalDrugs);
